@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import Swal from 'sweetalert2';
+import UserContext from '../contexts/userContext';
 import { loginUser } from '../services/api.services';
 import { Title } from '../styles/initialPageStyle';
 import { ButtonLogin, Conteiner, Input, SecondButton} from '../styles/loginAndSignUpStyle';
@@ -8,6 +9,9 @@ export default function LoginPage() {
     
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
+    const {setUser} = useContext(UserContext);
+
     function doLogin(e){
         e.preventDefault();
         const body = { email, password };
@@ -17,7 +21,9 @@ export default function LoginPage() {
             Swal.fire('Senha inválida! Digite uma senha com no mínimo 5 caracteres.');
         } else {
             loginUser(body)
-                .then((res) => console.log(res.data))
+                .then((res) => {
+                    setUser(res.data);
+                })
                 .catch((err) => {
                     if (err.response.status === 401) {
                         Swal.fire('Senha incorreta! Tente novamente!');

@@ -10,7 +10,12 @@ function loginUser (body) {
     return axios.post(`${URL}/sign-in`, body);
 }
 
+function getSignature (config) {
+    return axios.get(`${URL}/signature-data`, config);
+}
+
 export{
     registerUser,
     loginUser,
+    getSignature,
 }
