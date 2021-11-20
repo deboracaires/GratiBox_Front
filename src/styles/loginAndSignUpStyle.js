@@ -49,9 +49,22 @@ const SecondButton = styled.div`
     font-weight: 700;
 `
 
+const ButtonLogin = styled.button`
+    margin-top: 50%;
+    background-color: #8c97ea;
+    border: none;
+    border-radius: 8px;
+    height: 56px;
+    width: 55%;
+    color: #fff;
+    font-size: 30px;
+    font-weight: 700;
+`;
+
 export {
     Conteiner,
     Input,
     Button,
+    ButtonLogin,
     SecondButton,
 }
