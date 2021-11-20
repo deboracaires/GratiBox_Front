@@ -5,10 +5,16 @@ const Conteiner = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    
+    form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 `;
 
 const Input = styled.input`
-    width: 85%;
+    width: 100%;
     height: 9.5vh;
     border-radius: 9px;
     border: none;
