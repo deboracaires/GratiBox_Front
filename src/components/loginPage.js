@@ -1,4 +1,5 @@
 import { useContext, useState } from 'react';
+import { useNavigate } from 'react-router';
 import Swal from 'sweetalert2';
 import UserContext from '../contexts/userContext';
 import { loginUser } from '../services/api.services';
@@ -12,6 +13,8 @@ export default function LoginPage() {
 
     const {setUser} = useContext(UserContext);
 
+    const navigate = useNavigate();
+
     function doLogin(e){
         e.preventDefault();
         const body = { email, password };
@@ -23,6 +26,11 @@ export default function LoginPage() {
             loginUser(body)
                 .then((res) => {
                     setUser(res.data);
+                    if (res.data.hasSignature === false) {
+                        navigate('/planos');
+                    } else {
+                        navigate('/pagina-principal')
+                    }
                 })
                 .catch((err) => {
                     if (err.response.status === 401) {
