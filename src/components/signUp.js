@@ -32,7 +32,7 @@ export default function SignUp(){
         if (name.length < 5) {
             Swal.fire('Digite um nome com no mínimo 5 caracteres');
         } else if (email.substring(email.length - 4) !== '.com') {
-            Swal.fire(`${email.substring(email.length - 4)}`);
+            Swal.fire('Email inválido, tente novamente!');
         }else if (password !== confirmPassword) {
             Swal.fire('Senhas não coincidem, tente novamente!');
         } else if (password.length <5) {
