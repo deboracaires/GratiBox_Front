@@ -1,6 +1,10 @@
+import { useNavigate } from 'react-router';
 import { Bottom, ConteinerInitial, ImageStyle, SecondButton, Subtitle, Title } from '../styles/initialPageStyle.js';
 
 export default function InitialPage(){
+    
+    const navigate = useNavigate();
+    
     return(
         <ConteinerInitial>
             <Title>
@@ -13,8 +17,8 @@ export default function InitialPage(){
                 <img src='https://raw.githubusercontent.com/driven-exercises/Projeto-GratiBox/main/image05.webp' alt=''/>
             </ImageStyle>
             <Bottom>
-                <button>Quero começar</button>
-                <SecondButton>Já sou grato</SecondButton>
+                <button onClick={() => navigate('/cadastro')}>Quero começar</button>
+                <SecondButton onClick={() => navigate('/login')}>Já sou grato</SecondButton>
             </Bottom>
         </ConteinerInitial>
     );
