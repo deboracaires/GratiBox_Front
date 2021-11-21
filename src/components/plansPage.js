@@ -1,10 +1,12 @@
 import { useContext } from 'react';
+import { useNavigate } from 'react-router';
 import UserContext from '../contexts/userContext.js';
 import { Conteiner, Title, Subtitle, CardBackground, BottomCard, CardBackgroundMonth} from '../styles/planPageStyle.js';
 
 export default function PlansPage () {
     
     const { user } = useContext(UserContext);
+    const navigate = useNavigate();
 
     return (
         <Conteiner>
@@ -22,7 +24,7 @@ export default function PlansPage () {
                     <h1>
                         Ideal para quem quer exercer a gratidão todos os dias.
                     </h1>
-                    <button>Assinar</button>
+                    <button onClick = {() => navigate('/assinar-plano')}>Assinar</button>
                 </BottomCard>                
             </CardBackground> 
             <CardBackgroundMonth>
@@ -33,7 +35,7 @@ export default function PlansPage () {
                     <h1>
                         Ideal para quem está começando agora.
                     </h1>
-                    <button>Assinar</button>
+                    <button onClick = {() => navigate('/assinar-plano')}>Assinar</button>
                 </BottomCard>                
             </CardBackgroundMonth>        
         </Conteiner>
