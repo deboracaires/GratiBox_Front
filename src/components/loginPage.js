@@ -33,13 +33,13 @@ export default function LoginPage() {
                     }
                 })
                 .catch((err) => {
-                    if (err.response.status === 401) {
-                        Swal.fire('Senha incorreta! Tente novamente!');
-                    } else if (err.response.status === 404) {
-                        Swal.fire('Email não cadastrado!');
-                    } else if (err.response.status === 400) {
-                        Swal.fire('Dados inválidos! Tente novamente');
-                    }
+                    // if (err.response.status === 401) {
+                    //     Swal.fire('Senha incorreta! Tente novamente!');
+                    // } else if (err.response.status === 404) {
+                    //     Swal.fire('Email não cadastrado!');
+                    // } else if (err.response.status === 400) {
+                    //     Swal.fire('Dados inválidos! Tente novamente');
+                    // }
                 });
         }
     }

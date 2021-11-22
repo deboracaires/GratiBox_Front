@@ -17,33 +17,43 @@ export default function PrincipalPage(){
             }
         };
         getSignature(config)
-            .then((res) => setSignature(res.data))
+            .then((res) => {
+                setSignature(res.data);
+            })
             .catch((err) => console.log(err));
     }, [user.token]);
     
     const signatureDate = dayjs(signature.signature_date).format('DD/MM/YYYY');
-    let dates = []
+    let dates = [];
+    let products = [];
+    if(signature.length !== 0){
+        setNextDeliveries();
+    }
+    function setNextDeliveries(){
 
-    for(let i = 0; i < signature.delivery_history.length; i += 1){
-        if(signature.delivery_history[i].delivered === false){
-            const formatedDate = dayjs(signature.delivery_history[i].date).format('MM/DD/YYYY');
-            dates.push(formatedDate);
+        for(let i = 0; i < signature.delivery_history.length; i += 1){
+            if(signature.delivery_history[i].delivered === false){
+                const formatedDate = dayjs(signature.delivery_history[i].date).format('MM/DD/YYYY');
+                dates.push(formatedDate);
+            }
+        }
+        const parcialProducts = signature.products;
+        for(let i = 0; i < parcialProducts.length; i += 1){
+            if(parcialProducts[i] === 'cha'){
+                products[i] = 'Chás';
+            }
+            if(parcialProducts[i] === 'organico'){
+                products[i] = 'Produtos orgânicos';
+            }
+            if(parcialProducts[i] === 'incenso'){
+                products[i] = 'Incensos';
+            }
         }
     }
+    
     dates = dates.slice(0, 3);
 
-    let products = signature.products;
-    for(let i = 0; i < products.length; i += 1){
-        if(products[i] === 'cha'){
-            products[i] = 'Chás';
-        }
-        if(products[i] === 'organico'){
-            products[i] = 'Produtos orgânicos';
-        }
-        if(products[i] === 'incenso'){
-            products[i] = 'Incensos';
-        }
-    }
+    
     return (
         <ConteinerPrincipal>
             <Title>
