@@ -55,7 +55,7 @@ export default function LoginPage() {
                 </Input>
                 <Input type = 'password'
                     value = {password}
-                    placeholder = 'Nome'
+                    placeholder = 'Senha'
                     onChange={(e) => setPassword(e.target.value)}>
                 </Input>
                 <ButtonLogin type = 'submit'>Entrar</ButtonLogin>
