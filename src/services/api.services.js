@@ -19,7 +19,7 @@ function postSignature (config, body) {
 }
 
 function postAddress (config, body) {
-    return axios.post(`${URL}/adress`, body, config);
+    return axios.post(`${URL}/address`, body, config);
 }
 
 function getSignature(config) {
