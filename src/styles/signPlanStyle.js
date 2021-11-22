@@ -86,6 +86,65 @@ const BottomCard = styled.div`
     }
 `;
 
+const BottomAddress = styled.div `
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 220px;
+    background-color: #fff;
+    border-radius: 0 0 25px 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    input{
+        width: 300px;
+        background-color: rgba(224, 209, 237, 0.62);
+        height: 44px;
+        border-radius: 5px;
+        border: none;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 21px;
+        color: #4D65A8;
+        padding-left: 8px;
+        margin-bottom: 9px;
+
+        ::placeholder{
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 21px;
+            color: #4D65A8;
+        }
+    }
+
+    div{
+        width: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        input{
+            width: 178px;
+        }
+
+        select{
+            width: 108px;
+            background-color: rgba(224, 209, 237, 0.62);
+            height: 44px;
+            border-radius: 5px;
+            border: none;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 21px;
+            color: #4D65A8;
+            padding-left: 8px;
+            margin-bottom: 9px;
+        }
+    }
+`;
+
 const Button = styled.button `
     position: absolute;
     bottom: 10px;
@@ -105,5 +164,6 @@ export{
     ConteinerSignPlan,
     CardConteiner,
     BottomCard,
+    BottomAddress,
     Button,
 }
