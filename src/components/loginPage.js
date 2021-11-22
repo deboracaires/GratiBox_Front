@@ -33,13 +33,13 @@ export default function LoginPage() {
                     }
                 })
                 .catch((err) => {
-                    if (err.response.status === 401) {
-                        Swal.fire('Senha incorreta! Tente novamente!');
-                    } else if (err.response.status === 404) {
-                        Swal.fire('Email não cadastrado!');
-                    } else if (err.response.status === 400) {
-                        Swal.fire('Dados inválidos! Tente novamente');
-                    }
+                    // if (err.response.status === 401) {
+                    //     Swal.fire('Senha incorreta! Tente novamente!');
+                    // } else if (err.response.status === 404) {
+                    //     Swal.fire('Email não cadastrado!');
+                    // } else if (err.response.status === 400) {
+                    //     Swal.fire('Dados inválidos! Tente novamente');
+                    // }
                 });
         }
     }
@@ -60,7 +60,7 @@ export default function LoginPage() {
                 </Input>
                 <ButtonLogin type = 'submit'>Entrar</ButtonLogin>
             </form>
-            <SecondButton>Ainda não sou grato</SecondButton>
+            <SecondButton onClick={() => navigate('/cadastro')}>Ainda não sou grato</SecondButton>
         </Conteiner>
     );
 }
