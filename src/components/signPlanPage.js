@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useContext } from 'react';
+import { useNavigate } from 'react-router';
 import Swal from 'sweetalert2';
+import SignContext from '../contexts/signContext.js';
 import UserContext from '../contexts/userContext.js';
 import { Title, Subtitle  } from '../styles/planPageStyle.js';
 import { CardConteiner, ConteinerSignPlan, BottomCard, Button } from '../styles/signPlanStyle.js';
@@ -12,6 +14,9 @@ export default function SignPlanPage(){
     const [products, setProducts] = useState([]);
 
     const { user } = useContext(UserContext);
+    const { setSign } = useContext(SignContext);
+
+    const navigate = useNavigate();
     
     const plans = ['mensal', 'semanal'];
     const mensalDelivery = ['Dia 01', 'Dia 10', 'Dia 20'];
@@ -42,7 +47,8 @@ export default function SignPlanPage(){
         } else if (products.length === 0){
             Swal.fire('Selecione no mínimo um produto para prosseguir!');
         } else {
-            
+            setSign({plan, deliverySelected, products});
+            navigate('/assinar-plano-endereco');
         }
     }
     

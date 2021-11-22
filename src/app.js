@@ -5,22 +5,26 @@ import LoginPage from "./components/loginPage.js";
 import PlansPage from "./components/plansPage.js";
 import SignPlanPage from "./components/signPlanPage.js";
 import SignUp from "./components/signUp.js";
+import SignContext from "./contexts/signContext.js";
 import UserContext from "./contexts/userContext.js";
 
 export default function App() {
     
     const [user, setUser] = useState({});
+    const [sign, setSign] = useState({});
 
     return (
         <BrowserRouter>
             <UserContext.Provider value={{user, setUser}}>
-                <Routes>
-                    <Route path = '/' element = {<InitialPage/>} exact/>
-                    <Route path = '/cadastro' element = {<SignUp/>} exact/>
-                    <Route path = '/login' element = {<LoginPage/>} exact/>
-                    <Route path = '/planos' element = {<PlansPage/>} exact/>
-                    <Route path = '/assinar-plano' element = {<SignPlanPage/>} exact/>
-                </Routes>
+                <SignContext.Provider value = {{sign, setSign}}>
+                    <Routes>
+                        <Route path = '/' element = {<InitialPage/>} exact/>
+                        <Route path = '/cadastro' element = {<SignUp/>} exact/>
+                        <Route path = '/login' element = {<LoginPage/>} exact/>
+                        <Route path = '/planos' element = {<PlansPage/>} exact/>
+                        <Route path = '/assinar-plano' element = {<SignPlanPage/>} exact/>
+                    </Routes>
+                </SignContext.Provider>
             </UserContext.Provider>
         </BrowserRouter>
     );
