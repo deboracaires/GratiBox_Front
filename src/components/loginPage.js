@@ -60,7 +60,7 @@ export default function LoginPage() {
                 </Input>
                 <ButtonLogin type = 'submit'>Entrar</ButtonLogin>
             </form>
-            <SecondButton>Ainda não sou grato</SecondButton>
+            <SecondButton onClick={() => navigate('/cadastro')}>Ainda não sou grato</SecondButton>
         </Conteiner>
     );
 }
