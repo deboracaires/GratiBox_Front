@@ -33,13 +33,13 @@ export default function LoginPage() {
                     }
                 })
                 .catch((err) => {
-                    // if (err.response.status === 401) {
-                    //     Swal.fire('Senha incorreta! Tente novamente!');
-                    // } else if (err.response.status === 404) {
-                    //     Swal.fire('Email não cadastrado!');
-                    // } else if (err.response.status === 400) {
-                    //     Swal.fire('Dados inválidos! Tente novamente');
-                    // }
+                     if (err.response.status === 401) {
+                         Swal.fire('Senha incorreta! Tente novamente!');
+                     } else if (err.response.status === 404) {
+                         Swal.fire('Email não cadastrado!');
+                     } else if (err.response.status === 400) {
+                         Swal.fire('Dados inválidos! Tente novamente');
+                     }
                 });
         }
     }
@@ -50,7 +50,7 @@ export default function LoginPage() {
             <form onSubmit={doLogin}>
                 <Input type = 'email'
                     value = {email}
-                    placeholder = 'Nome'
+                    placeholder = 'Email'
                     onChange={(e) => setEmail(e.target.value)}>
                 </Input>
                 <Input type = 'password'
