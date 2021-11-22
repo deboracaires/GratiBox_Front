@@ -91,11 +91,11 @@ export default function SignPlanPage(){
                     </select>
                     <div>
                         <h1 className = 'title'>Quero receber</h1>
-                        <input onChange = {e => verifyCheckbox(e)}type="checkbox" value='chas'/>
+                        <input onChange = {e => verifyCheckbox(e)}type="checkbox" value='cha'/>
                         <label>Chás</label>
-                        <input onChange = {e => verifyCheckbox(e)}type="checkbox" value='incensos'/>
+                        <input onChange = {e => verifyCheckbox(e)}type="checkbox" value='incenso'/>
                         <label>Incensos</label>
-                        <input onChange = {e => verifyCheckbox(e)}type="checkbox" value='organicos'/>
+                        <input onChange = {e => verifyCheckbox(e)}type="checkbox" value='organico'/>
                         <label>Produtos orgânicos</label>
                     </div>
                 </BottomCard>

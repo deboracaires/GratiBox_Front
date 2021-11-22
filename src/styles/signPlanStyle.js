@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const ConteinerSignPlan = styled.div `
-    margin: 20% 0 0 0;    
+    margin: 10% 0 0 0;    
     display: flex;
     flex-direction: column;
     align-items: center;
