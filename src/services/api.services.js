@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const URL = 'https://gratibox-back-deboracaires.herokuapp.com';
+const URL = 'http://localhost:4000';
 
 function registerUser (body) {
     return axios.post(`${URL}/sign-up`, body);
