@@ -17,8 +17,13 @@ function getSignatureData (config) {
 function postSignature (config, body) {
     return axios.post(`${URL}/signature`, body, config);
 }
+
 function postAddress (config, body) {
     return axios.post(`${URL}/adress`, body, config);
+}
+
+function getSignature(config) {
+    return axios.get(`${URL}/signature`, config);
 }
 
 export{
@@ -27,4 +32,5 @@ export{
     getSignatureData,
     postSignature,
     postAddress,
+    getSignature,
 }
